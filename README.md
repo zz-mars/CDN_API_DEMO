@@ -7,7 +7,16 @@
 * 文件刷新
 * 修改域名配置
 
-当前支持GET和POST方式的参数传递方式
+## 接口简述
+### 添加加速域名
+* AddCdnHost　：新增域名，只包含基本参数
+* EAddCdnHost ：这个接口比AddCdnHost支持更多可选参数
+### 修改域名配置
+* UpdateCdnCache    ：修改缓存设置
+* UpdateCdnProjectId：修改所属项目
+* UpdateCdnConfig   ： 修改更多配置项，详见demo
 
-使用时把demo里的YOUR_SECRET_ID和YOUR_SECRET_KEY替换成自己的腾讯云secret id和secret_key
-id和key到 https://console.qcloud.com/capi 页面获取
+## 其他说明
+* 当前支持GET和POST方式的参数传递方式
+* 使用时把demo里的YOUR_SECRET_ID和YOUR_SECRET_KEY替换成自己的腾讯云secret id和secret_key
+* id和key到 https://console.qcloud.com/capi 页面获取
