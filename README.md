@@ -11,12 +11,15 @@
 ### 添加加速域名
 * AddCdnHost　：新增域名，只包含基本参数
 * EAddCdnHost ：这个接口比AddCdnHost支持更多可选参数
+
 ### 修改域名配置
 * UpdateCdnCache    ：修改缓存设置
 * UpdateCdnProjectId：修改所属项目
 * UpdateCdnConfig   ： 修改更多配置项，详见demo
+
 ### 刷新URL
 * RefreshCdnUrl
+
 ### 获取域名信息
 * GetHostInfoByHost ： 根据域名获取域名信息
 * GetHostInfoById   ： 根据域名id获取域名信息
