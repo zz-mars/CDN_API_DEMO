@@ -15,6 +15,11 @@
 * UpdateCdnCache    ：修改缓存设置
 * UpdateCdnProjectId：修改所属项目
 * UpdateCdnConfig   ： 修改更多配置项，详见demo
+### 刷新URL
+* RefreshCdnUrl
+### 获取域名信息
+GetHostInfoByHost ： 根据域名获取域名信息
+GetHostInfoById   ： 根据域名id获取域名信息
 
 ## 其他说明
 * 当前支持GET和POST方式的参数传递方式
