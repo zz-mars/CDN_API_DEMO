@@ -1,8 +1,21 @@
 <?php
+/*需要填写你的密钥，可从  https://console.qcloud.com/capi 获取 SecretId 及 $secretKey*/
+$secretKey='YOUR_SECRET_KEY';
+$secretId='YOUR_SECRET_ID';
+$action='EAddCdnHost';
 
-
-/***************真实调用时，需要根据不同接口修改下面的参数*********************************/
-/***************此处以DescribeInstances为例说明 如何获取指定 instanceId 的虚拟机**********/
+/*参数*/
+$PRIVATE_PARAMS = array(
+                "host" => "tt.u-ndefined.com",  // 域名
+                "projectId" => 0,               // 项目id
+                "hostType" => "cname",          // 域名类型，支持cname和ftp
+                "origin" => "xx.u-ndefined.com:10234",  // 源站
+                "cacheMode" => "custom",                // 缓存类型
+                "cache" => "[[0,\"all\", 1023448]]",    // 缓存时间设置
+                "refer" => "[1,[\"qq.baidu.com\", \"v.qq.com\"]]",  // referer设置
+                "fwdHost" => "qq.com.tk",               // 回源host
+                "fullUrl" => "off",                     // 全url缓存开关
+                );
 
 $HttpUrl="cdn.api.qcloud.com";
 
@@ -12,34 +25,15 @@ $HttpMethod="POST";
 /*是否https协议，大部分接口都必须为https，只有少部分接口除外（如MultipartUploadVodFile）*/
 $isHttps =true;
 
-/*需要填写你的密钥，可从  https://console.qcloud.com/capi 获取 SecretId 及 $secretKey*/
-$secretKey='YOUR_SECRET_KEY';
-
-
 /*下面这五个参数为所有接口的 公共参数；对于某些接口没有地域概念，则不用传递Region（如DescribeDeals）*/
 $COMMON_PARAMS = array(
                 'Nonce' => rand(),
                 'Timestamp' =>time(NULL),
-                'Action' =>'EAddCdnHost',
-                'SecretId' => 'YOUR_SECRET_ID',
+                'Action' =>$action,
+                'SecretId' => $secretId,
                 );
-
-/*下面这两个参数为 DescribeInstances 接口的私有参数，用于查询特定的虚拟机列表*/
-$PRIVATE_PARAMS = array(
-                "host" => "tt.u-ndefined.com",
-                "projectId" => 0,
-                "hostType" => "cname",
-                "origin" => "xx.u-ndefined.com:10234",
-                "cacheMode" => "custom",
-                "cache" => "[[0,\"all\", 1023448]]",
-                "refer" => "[1,[\"qq.baidu.com\", \"v.qq.com\"]]",
-                "fwdHost" => "qq.com.tk",
-                "fullUrl" => "off",
-                );
-
 
 /***********************************************************************************/
-
 
 CreateRequest($HttpUrl,$HttpMethod,$COMMON_PARAMS,$secretKey, $PRIVATE_PARAMS, $isHttps);
 

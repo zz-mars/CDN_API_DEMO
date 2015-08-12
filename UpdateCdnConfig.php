@@ -1,30 +1,10 @@
 <?php
-
-
-/***************真实调用时，需要根据不同接口修改下面的参数*********************************/
-/***************此处以DescribeInstances为例说明 如何获取指定 instanceId 的虚拟机**********/
-
-$HttpUrl="cdn.api.qcloud.com";
-
-/*除非有特殊说明，如MultipartUploadVodFile，其它接口都支持GET及POST*/
-$HttpMethod="POST";
-
-/*是否https协议，大部分接口都必须为https，只有少部分接口除外（如MultipartUploadVodFile）*/
-$isHttps =true;
-
 /*需要填写你的密钥，可从  https://console.qcloud.com/capi 获取 SecretId 及 $secretKey*/
 $secretKey='YOUR_SECRET_KEY';
+$secretId='YOUR_SECRET_ID';
+$action='UpdateCdnConfig';
 
-
-/*下面这五个参数为所有接口的 公共参数；对于某些接口没有地域概念，则不用传递Region（如DescribeDeals）*/
-$COMMON_PARAMS = array(
-                'Nonce' => rand(),
-                'Timestamp' =>time(NULL),
-                'Action' =>'UpdateCdnConfig',
-                'SecretId' => 'YOUR_SECRET_ID',
-                );
-
-/*下面这两个参数为 DescribeInstances 接口的私有参数，用于查询特定的虚拟机列表*/
+/*参数*/
 $PRIVATE_PARAMS = array(
                 "hostId" => 862,
                 "projectId" => 0,
@@ -35,6 +15,21 @@ $PRIVATE_PARAMS = array(
                 "fullUrl" => "off",
                 );
 
+$HttpUrl="cdn.api.qcloud.com";
+
+/*除非有特殊说明，如MultipartUploadVodFile，其它接口都支持GET及POST*/
+$HttpMethod="POST";
+
+/*是否https协议，大部分接口都必须为https，只有少部分接口除外（如MultipartUploadVodFile）*/
+$isHttps =true;
+
+/*下面这五个参数为所有接口的 公共参数；对于某些接口没有地域概念，则不用传递Region（如DescribeDeals）*/
+$COMMON_PARAMS = array(
+                'Nonce' => rand(),
+                'Timestamp' =>time(NULL),
+                'Action' =>$action,
+                'SecretId' => $secretId,
+                );
 
 /***********************************************************************************/
 

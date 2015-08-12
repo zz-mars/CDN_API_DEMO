@@ -1,8 +1,14 @@
 <?php
+/*需要填写你的密钥，可从  https://console.qcloud.com/capi 获取 SecretId 及 $secretKey*/
+$secretKey='YOUR_SECRET_KEY';
+$secretId='YOUR_SECRET_ID';
+$action='GetHostInfoByHost';
 
-
-/***************真实调用时，需要根据不同接口修改下面的参数*********************************/
-/***************此处以DescribeInstances为例说明 如何获取指定 instanceId 的虚拟机**********/
+/*参数*/
+$PRIVATE_PARAMS = array (
+                 "hosts.0" => "ping.cdn.qcloud.com",
+                 "hosts.1" => "img46.ddimg.cn",
+                );
 
 $HttpUrl="cdn.api.qcloud.com";
 
@@ -12,56 +18,13 @@ $HttpMethod="POST";
 /*是否https协议，大部分接口都必须为https，只有少部分接口除外（如MultipartUploadVodFile）*/
 $isHttps =true;
 
-/*需要填写你的密钥，可从  https://console.qcloud.com/capi 获取 SecretId 及 $secretKey*/
-$secretKey='YOUR_SECRET_KEY';
-
-
 /*下面这五个参数为所有接口的 公共参数；对于某些接口没有地域概念，则不用传递Region（如DescribeDeals）*/
 $COMMON_PARAMS = array(
                 'Nonce' => rand(),
                 'Timestamp' =>time(NULL),
-                'Action' =>'GetHostInfoByHost',
-                'SecretId' => 'YOUR_SECRET_ID',
+                'Action' =>$action,
+                'SecretId' => $secretId,
                 );
-
-/*下面这两个参数为 DescribeInstances 接口的私有参数，用于查询特定的虚拟机列表*/
-$PRIVATE_PARAMS = array (
-                 "hosts.0" => "ping.cdn.qcloud.com",
-                 "hosts.1" => "img46.ddimg.cn",
-                 //"hosts.2" => "m.libx.so",
-                 //"hosts.3" => "xxx.talebook.org",
-                 //"hosts.4" => "x.cn",
-                 //"hosts.5" => "qtest.geilicdn.com",
-                 //"hosts.6" => "d11.res.meilishuo.net",
-                 //"hosts.7" => "www.avevail.com",
-                 //"hosts.8" => "no1.libx.so",
-                 //"hosts.9" => "s.libx.so",
-                 //"hosts.10" => "y.libx.so",
-                 //"hosts.11" => "z.libx.so",
-                 //"hosts.12" => "pic1.vipshop.com",
-                 //"hosts.13" => "mzt-qq-test.vip.com",
-                 //"hosts.14" => "ads-qq-test.vip.com",
-                 //"hosts.15" => "test001.smartisanos.cn",
-                 //"hosts.16" => "qq.cdn.umivi.net",
-                 //"hosts.17" => "apollo5.cyoupic.com",
-                 //"hosts.18" => "apollo6.cyoupic.com",
-                 //"hosts.19" => "hello.u-ndefined.com",
-                 //"hosts.20" => "ftp.u-ndefined.com",
-                 //"hosts.21" => "testcdn.cig.com.cn",
-                 //"hosts.22" => "player.ku6cdn.com.talebook.org",
-                 //"hosts.23" => "imgqq.geilicdn.com",
-                 //"hosts.24" => "shawxiao.qcloud.talebook.org",
-                 //"hosts.25" => "admin.qcloud.talebook.org",
-                 //"hosts.26" => "t5.eu-sdk.net",
-                 //"hosts.27" => "tyler.talebook.org",
-                 //"hosts.28" => "cdn1.baidu.com",
-                 //"hosts.29" => "test.hg112.com",
-                 //"hosts.30" => "r2.talebook.org",
-                 //"hosts.31" => "r3.helenwang.cn",
-                 //"hosts.32" => "q.u-ndefined.com",
-                 //"hosts.33" => "cosftp.talebook.org",
-                );
-
 
 /***********************************************************************************/
 
