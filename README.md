@@ -28,3 +28,4 @@
 * 当前支持GET和POST方式的参数传递方式
 * 使用时把demo里的YOUR_SECRET_ID和YOUR_SECRET_KEY替换成自己的腾讯云secret id和secret_key
 * id和key到 https://console.qcloud.com/capi 页面获取
+* wiki http://www.qcloud.com/wiki//v2/RefreshCdnUrl
