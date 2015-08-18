@@ -24,6 +24,9 @@
 * GetHostInfoByHost ： 根据域名获取域名信息
 * GetHostInfoById   ： 根据域名id获取域名信息
 
+### 文件预拉热接口（需加白名单，请联系客户经理）
+* CdnPusher
+
 ## 其他说明
 * 当前支持GET和POST方式的参数传递方式
 * 使用时把demo里的YOUR_SECRET_ID和YOUR_SECRET_KEY替换成自己的腾讯云secret id和secret_key
