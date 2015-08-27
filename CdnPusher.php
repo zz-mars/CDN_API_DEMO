@@ -1,7 +1,7 @@
 <?php
 /*需要填写你的密钥，可从  https://console.qcloud.com/capi 获取 SecretId 及 $secretKey*/
-//$secretKey='YOUR_SECRET_KEY';
-//$secretId="YOUR_SECRET_ID";
+$secretKey='YOUR_SECRET_KEY';
+$secretId="YOUR_SECRET_ID";
 $action = "CdnPusher";
 
 $PRIVATE_PARAMS = array(
