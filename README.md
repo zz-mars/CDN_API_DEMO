@@ -20,6 +20,9 @@
 ### 刷新URL
 * RefreshCdnUrl
 
+### 刷新dir
+* RefreshCdnDir
+
 ### 获取域名信息
 * GetHostInfoByHost ： 根据域名获取域名信息
 * GetHostInfoById   ： 根据域名id获取域名信息
