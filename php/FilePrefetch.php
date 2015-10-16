@@ -1,12 +1,27 @@
 <?php
 /*需要填写你的密钥，可从  https://console.qcloud.com/capi 获取 SecretId 及 $secretKey*/
-$action = "GenerateLogList";
-$secretKey = "YOUR_SECRET_KEY";
-$secretId = "YOUR_SECRET_ID";
-// 参数
-$PRIVATE_PARAMS = array(
-                'hostId' => 253,
-                );
+$secretKey='YOUR_SECRET_KEY';
+$secretId="YOUR_SECRET_ID";
+$action = "FilePrefetch";
+
+$items = array(
+		array(
+			"host" => "ping.cdn.qcloud.com",
+			"pathes" => array("/file1", "/file2"),
+		),
+		array(
+			"host" => "cosftp.talebook.org",
+			"pathes" => array("/file3", "/file4"),
+		),
+);
+
+$PRIVATE_PARAMS = array();
+$item_idx = 0;
+foreach($items as $item) {
+	$key = "items." . $item_idx;
+	$PRIVATE_PARAMS[$key] = json_encode($item);
+	$item_idx++;
+}
 
 $HttpUrl="cdn.api.qcloud.com";
 
@@ -20,11 +35,9 @@ $isHttps =true;
 $COMMON_PARAMS = array(
                 'Nonce' => rand(),
                 'Timestamp' =>time(NULL),
-                'Action' => $action,
+                'Action' =>$action,
                 'SecretId' => $secretId,
                 );
-
-/***********************************************************************************/
 
 
 CreateRequest($HttpUrl,$HttpMethod,$COMMON_PARAMS,$secretKey, $PRIVATE_PARAMS, $isHttps);
