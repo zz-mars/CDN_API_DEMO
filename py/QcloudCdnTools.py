@@ -14,6 +14,9 @@ import time
 from pprint import pprint
 from optparse import OptionParser
 
+reload(sys)
+sys.setdefaultencoding("utf-8")
+
 try: import simplejson as json
 except: import json
 
@@ -223,6 +226,17 @@ class Cdn:
 
     def GetCdnMiddleSourceList(self):
         pass
+
+    def EAddCdnHost(self):
+        self.parser.add_option('--host', dest='host', help="CDN host")
+        self.parser.add_option('--origin', dest='origin', help="CDN origin server address")
+        self.parser.add_option('--host_type', dest='host_type', choices=["cname", "ftp"], help="host type: cname or ftp")
+        self.parser.add_option('--project_id', dest='project_id', default=0, help="Attach the host to specific project.")
+        self.parser.add_option('--cache_mode', dest='cache_mode', choices=['simple', 'custom'], default='simple', help='simple or custom, learn more by visting -> http://www.qcloud.com/wiki/CDN%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C#CDN.E9.85.8D.E7.BD.AE.E7.AE.A1.E7.90.86.EF.BC.9A.E7.BC.93.E5.AD.98.E6.97.B6.E9.97.B4')
+        self.parser.add_option('--cache', dest='cache', default='[[0,"all", 2592000]]', help='TODO')
+        self.parser.add_option('--refer', dest='refer', default='[0,[]]', help='TODO')
+        self.parser.add_option('--fwd_host', dest='fwd_host', help='the host header when cdn server request origin with')
+        self.parser.add_option('--full_url', dest='full_url', choices=['on', 'off'], default='on', help='the requested resource will be stored on cdn server with the full uri as key if this option is turned on, otherwise uri without arguments will be the key')
 
 
 def main():
