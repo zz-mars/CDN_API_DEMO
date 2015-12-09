@@ -239,6 +239,19 @@ class Cdn:
         self.parser.add_option('--fwd_host', dest='fwd_host', help='the host header when cdn server request origin with')
         self.parser.add_option('--full_url', dest='full_url', choices=['on', 'off'], default='on', help='the requested resource will be stored on cdn server with the full uri as key if this option is turned on, otherwise uri without arguments will be the key')
 
+    def CdnPusher(self):
+        self.parser.add_option('--host', dest='host', help="CDN host")
+        self.parser.add_option('--pathesfromfile', dest='pathesfromfile', help="pathes from file")
+
+    def get_params_CdnPusher(self):
+        if self.options.pathesfromfile:
+            f = open(self.options.pathesfromfile)
+            self.params["urlInfos"] = [p.strip() for p in f.readlines()]
+        elif not self.options.pathesfromfile:
+            raise ValueError, "Please provide --pathesfromfile"
+
+    def GetCdnPushStatus(self):
+        self.parser.add_option('--task_id', dest='task_id', help="task id")
 
 def main():
     cdn = Cdn()
