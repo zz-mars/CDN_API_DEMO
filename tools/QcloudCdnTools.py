@@ -193,6 +193,12 @@ class Cdn:
     def DeleteCdnHost(self):
         self.parser.add_option('--host_id', dest='host_id', help="CDN host ID")
 
+    def GetHostInfoById(self):
+        self.parser.add_option('--host_id', dest='host_id', default=[], action="append", help="CDN host ID(use multi --host_id)")
+
+    def GetHostInfoByHost(self):
+        self.parser.add_option('--hosts', dest='hosts', default=[], action="append", help="CDN host ID(use multi --hosts)")
+
     def DescribeCdnHostDetailedInfo(self):
         self.parser.add_option('--start_date', dest='start_date', help="Start Date, eg '2015-04-20 00:00:00'")
         self.parser.add_option('--end_date', dest='end_date', help="end Date, eg '2015-04-20 23:59:59'")
