@@ -255,26 +255,10 @@ class Cdn:
         self.parser.add_option('--task_id', dest='task_id', help="task id")
 
     def GetHostInfoByHost(self):
-        self.parser.add_option('--hostsfromfile', dest='hostsfromfile', help='hosts from file')
-
-    def get_params_GetHostInfoByHost(self):
-        if self.options.hostsfromfile:
-            f = open(self.options.hostsfromfile)
-            self.params["hosts"] = [p.strip() for p in f.readlines()]
-            f.close()
-        elif not self.options.pathesfromfile:
-            raise ValueError, "Please provide --hostsfromfile"
+        self.parser.add_option('--hosts', dest='hosts', default=[], action="append", help="CDN host ID(use multi --hosts)")
 
     def GetHostInfoById(self):
-        self.parser.add_option('--idsfromfile', dest='idsfromfile', help='ids from file')
-
-    def get_params_GetHostInfoById(self):
-        if self.options.idsfromfile:
-            f = open(self.options.idsfromfile)
-            self.params["ids"] = [p.strip() for p in f.readlines()]
-            f.close()
-        elif not self.options.pathesfromfile:
-            raise ValueError, "Please provide --idsfromfile"
+        self.parser.add_option('--host_id', dest='host_id', default=[], action="append", help="CDN host ID(use multi --host_id)")
 
 def main():
     cdn = Cdn()
