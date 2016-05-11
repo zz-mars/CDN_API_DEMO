@@ -25,7 +25,7 @@
 | API                                      | 功能说明                     |
 | ---------------------------------------- | ------------------------ |
 | [AddCdnHost](https://www.qcloud.com/doc/api/231/%E6%96%B0%E5%A2%9E%E5%8A%A0%E9%80%9F%E5%9F%9F%E5%90%8D)| 接入域名至腾讯云CDN              |
-| [OnlineHost](https://www.qcloud.com/doc/api/231/上线CDN域名) | 上线指定CDN域名                |
+| [OnlineHost](https://www.qcloud.com/doc/api/231/%E4%B8%8A%E7%BA%BFCDN%E5%9F%9F%E5%90%8D) | 上线指定CDN域名                |
 | [OfflineHost](https://www.qcloud.com/doc/api/231/下线CDN域名) | 下线指定CDN域名                |
 | [DeleteCdnHost](https://www.qcloud.com/doc/api/231/删除域名) | 删除指定CDN域名                |
 | [UpdateCdnHost](https://www.qcloud.com/doc/api/231/修改源站信息) | 修改域名源站设置                 |
