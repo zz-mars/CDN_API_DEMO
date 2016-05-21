@@ -213,7 +213,7 @@ class Cdn:
     def AddCdnHost(self):
         self.parser.add_option('--host', dest='host', help="CDN host")
         self.parser.add_option('--origin', dest='origin', default='',help="CDN origin server address")
-        self.parser.add_option('--hosType', dest='hostType', choices=["cname", "ftp"], help="host type: cname or ftp")
+        self.parser.add_option('--hostType', dest='hostType', choices=["cname", "ftp"], help="host type: cname or ftp")
         self.parser.add_option('--projectId', dest='projectId', default=0, help="Attach the host to specific project.")
         pass
 
