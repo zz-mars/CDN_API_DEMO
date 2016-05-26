@@ -165,7 +165,8 @@ class Cdn:
 
 
     def DescribeCdnHosts(self):
-        pass
+        self.parser.add_option('--offset', dest='offset', default='', help="offset")
+        self.parser.add_option('--limit', dest='limit', default='',help="limit")
 
     def RefreshCdnUrl(self):
         self.parser.add_option('--urls', dest='urls', default=[], action="append", help="Flush the cache of these URLs(use multi --urls)")
