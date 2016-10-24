@@ -100,7 +100,7 @@ def Name(name):
 class Cdn:
     def __init__(self):
         self.params = {
-                'Re.g.ion': 'gz',
+                'Region': 'gz',
                 'Nonce': random.randint(1, sys.maxint),
                 'Timestamp': int(time.time()),
                 }
