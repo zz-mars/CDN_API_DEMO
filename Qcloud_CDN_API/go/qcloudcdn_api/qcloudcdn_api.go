@@ -59,7 +59,7 @@ func Signature(secretKey string, params map[string]interface{}, method string, r
 	}
 	fmt.Println("signPlainText: ", sigUrl)
 	unencode_sign, _sign := sign(sigUrl, secretKey)
-	params["Signature"] = _sign
+	params["Signature"] = unencode_sign
 	fmt.Println("unencoded signature: ", unencode_sign)
 	return _sign, params
 }
@@ -115,7 +115,7 @@ func ParamsToStr(params map[string]interface{}) string {
 			strings.Replace(k, ".", "_", -1)
 		}
 		v := typeSwitcher(v)
-		requesturl = requesturl + k + "=" + v
+		requesturl = requesturl + k + "=" + url.QueryEscape(v)
 	}
 	return requesturl
 }
