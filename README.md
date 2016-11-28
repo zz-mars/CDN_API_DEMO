@@ -1,5 +1,5 @@
 
-## ！！！腾讯云CDN API SDK已经迁移至 https://github.com/QCloudCDN 
+## ！！！腾讯云CDN API SDK已经迁移至https://github.com/QCloudCDN/CDN_API_SDK 
 ##腾讯云CDN API 概览
 
 ## 消耗及统计量查询
