@@ -1,4 +1,7 @@
+
+## ！！！腾讯云CDN API SDK已经迁移至 https://github.com/QCloudCDN 
 ##腾讯云CDN API 概览
+
 ## 消耗及统计量查询
 
 | API                                      | 功能说明                                     |
@@ -24,7 +27,7 @@
 
 | API                                      | 功能说明                     |
 | ---------------------------------------- | ------------------------ |
-| [AddCdnHost](https://www.qcloud.com/doc/api/231/%E6%96%B0%E5%A2%9E%E5%8A%A0%E9%80%9F%E5%9F%9F%E5%90%8D)| 接入域名至腾讯云CDN              |
+| [AddCdnHost](https://www.qcloud.com/doc/api/231/%E6%96%B0%E5%A2%9E%E5%8A%A0%E9%80%9F%E5%9F%9F%E5%90%8D) | 接入域名至腾讯云CDN              |
 | [OnlineHost](https://www.qcloud.com/doc/api/231/%E4%B8%8A%E7%BA%BFCDN%E5%9F%9F%E5%90%8D) | 上线指定CDN域名                |
 | [OfflineHost](https://www.qcloud.com/doc/api/231/%E4%B8%8B%E7%BA%BFCDN%E5%9F%9F%E5%90%8D) | 下线指定CDN域名                |
 | [DeleteCdnHost](https://www.qcloud.com/doc/api/231/%E5%88%A0%E9%99%A4%E5%8A%A0%E9%80%9F%E5%9F%9F%E5%90%8D) | 删除指定CDN域名                |
